@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta chrset="utf-8"/>
+<title>Port folio - kafelki</title>
+<meta name="description" content="bla..."/>
+<meta name="keywordes" Content="słowa klucz dla strony"/>
+<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+<link rel="stylesheet" href="style.css"/type="text/css"/>
+<link rel="stylesheet" href="css/fontello.css"/type="text/css"/>
+
+<link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet"type="text/css">		
+
+<script src="timer.js"></script>															
+																		
+</head>
+<body>
+
+	
+<script>
+			var my_canvas = document.createElement('canvas');
+			my_canvas.width = 500;
+			my_canvas.height = 500;
+			document.body.appendChild(my_canvas);
+			var ctx = my_canvas.getContext('2d');
+			//animacja kwadratu:
+			var x = my_canvas.width/2;
+			var y = my_canvas.height/2;
+			var h = 40;
+			var fps = 30;
+			
+			// funkcja
+			
+			// żeby czynność się powtarzała
+			
+			setInterval(animationLoop, 1000/fps)
+			
+			function animationLoop()
+			{
+			
+			//żeby poprzedni kwadracik znikał
+			//ctx.clearRect(0,0,my_canvas.width,my_canvas.height);
+			
+			ctx.fillStyle = 'rgba(255,255,255,0.2)';
+			ctx.fillRect(0,0,my_canvas.width,my_canvas.height);
+			ctx.fillStyle = "black";
+			x = x+2;
+			y = y+2; 
+			ctx.fillRect(x-h/2,y-h/2,h,h);
+			}
+			
+			
+			
+			
+			
+			
+	</script>
+
+
+
+
+</body>
+
+</html>

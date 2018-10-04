@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta chrset="utf-8"/>
+<title>Równanie kwadratowe</title>
+<script type="text/javascript">
+
+function rozwiazanie(){
+
+var a = document.getElementById("a").value
+var b = document.getElementById("b").value
+var c = document.getElementById("c").value
+var delta
+var x1
+var x2
+
+
+delta = Math.pow(b,2) - (4*a*c)
+
+
+
+if (delta<0){
+alert ("Delta ujemna. Brak rozwiązan")
+
+}
+ else if (delta==0){
+x1= - b/(2*a)
+alert ("jedno rozwiązanie. x1= "+x1)
+
+}
+
+else if (delta>0){
+
+x1=(-b - Math.sqrt(delta))/(2*a)
+x2=(-b + Math.sqrt(delta))/(2*a)
+alert ("dwa rozwiazania : x1="+x1 + " oraz  x2="+x2)
+}
+
+}
+function czyszczenie(){
+		document.getElementById("a").value=0
+		document.getElementById("b").value=0
+		document.getElementById("c").value=0
+}
+
+</script>
+</head>
+<body>
+<h1> Rozwiązujemy równanie kwadratowe</h1>
+<input type="text" value="0" size="3" id="a"/>
+x^2 +
+<input type="text" value="0" size="3" id="b"/>
+x+
+<input type="text" value="0" size="3" id="c"/>
+=0
+<br/>
+<br/>
+<input type="button" value="Rozwiaz" onclick="rozwiazanie()"/>
+<input type="button" value="Wyczysc" onclick="czyszczenie()"/>
+
+
+</body>
+</html>
