@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta chrset="utf-16"/>
+<title>suma/róznia/...</title>
+<script type="text/javascript">
+function zaznaczoneRadio(grupa){
+var button
+for (var i =0;i< grupa.length;i++){
+		button= grupa[i]	
+		if (button.checked){
+			return button
+		}
+} 
+}
+function licz(){
+var zaznaczony = zaznaczoneRadio(document.forms.dzilania.elements.grupa1) 
+alert( zaznaczony.value)
+var a = Number(document.getElementById('pierwsza').value)
+var a1=a
+var b = Number(document.getElementById('druga').value)
+var index1= a+1
+var index2 =b-a
+var index3= 1
+if (a<b) {
+while(index3<=index2){
+			a1=a1+index1
+			index3++
+			index1++
+}
+
+alert( "Wynikiem działania jest : " +a1)
+}
+else {
+alert ('Pierwsza liczba jest większa od drugiej')
+}
+}
+
+</script>
+
+</head>
+<body>
+
+<h1> Znajdź sumę wszystkich liczb </h1>
+
+od
+<input type = "number" id="pierwsza" value="0">
+do
+<input type = "number" id="druga" value="10">
+<br/><br/>
+<input type="button" value="Oblicz" onclick="licz()"/>
+<br/>
+<br/>
+
+<form name  ="dzialania" id="dzilania">
+		<input type ="radio" value="Suma" name="grupa1" checked="true"/> Suma<br/>
+		<input type ="radio" value="Różnica" name="grupa1"/> Różnica<br/>
+		<input type ="radio" value="Iloczyn" name="grupa1"/> Iloczyn<br/>
+		<input type ="radio" value="Iloraz" name="grupa1"/> Iloraz<br/>
+
+</form>
+
+
+
+</body>
+
+</html

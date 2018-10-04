@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta chrset="utf-8"/>
+<title>Matematyka</title>
+<script type="text/javascript">
+
+function wyliczanie(){
+
+var m = document.getElementById("m").value
+var n = document.getElementById("n").value
+var k = document.getElementById("k").value
+
+var y
+y=m-(n/k);
+//tu coś nie działa gdy chce dodać
+alert ("Wynik dzialania to: "+y)
+}
+
+function obliczanie(){
+
+var p = document.getElementById("p").value
+var q = document.getElementById("q").value
+
+var x
+
+x=-p/q
+alert ("jedno rozwiazanie. x= "+x)
+
+
+}
+
+function rozwiazanie(){
+
+var a = document.getElementById("a").value
+var b = document.getElementById("b").value
+var c = document.getElementById("c").value
+var delta
+var x1
+var x2
+
+
+delta = Math.pow(b,2) - (4*a*c)
+
+
+
+if (delta<0){
+alert ("Delta ujemna. Brak rozwiazan")
+
+}
+ else if (delta==0){
+x1= - b/(2*a)
+alert ("jedno rozwiazanie. x1= "+x1)
+
+}
+
+else if (delta>0){
+
+x1=(-b - Math.sqrt(delta))/(2*a)
+x2=(-b + Math.sqrt(delta))/(2*a)
+alert ("dwa rozwiazania : x1="+x1 + " oraz  x2="+x2)
+}
+
+}
+function poleKola(){
+var r = document.getElementById("r").value
+var poleKola
+poleKola = Math.PI*r*r;
+alert ("pole kola wynosi:"+poleKola)
+
+}
+
+
+function czyszczenie(){
+		document.getElementById("a").value=0
+		document.getElementById("b").value=0
+		document.getElementById("c").value=0
+}
+function czyszczenie1(){
+		document.getElementById("m").value=0
+		document.getElementById("n").value=0
+		document.getElementById("k").value=0
+}
+function czyszczenie2(){
+		document.getElementById("p").value=0
+		document.getElementById("q").value=0
+	
+}
+function czyszczenie3(){
+		document.getElementById("r").value=0
+		
+}
+
+</script>
+</head>
+<body bgcolor="green">
+<center> <font size="10"> Co pamietacie ze szkoly z lekcji matematyki?<br/> Zapraszam do krotkiej powtorki.</font></center><br/><br/>
+<h1>Zwykle dzialania matematyczne.</h1>
+
+<input type="text" value="0" size="3" id="m"/>
+-
+<input type="text" value="0" size="3" id="n"/>
+:
+<input type="text" value="0" size="3" id="k"/>
+
+<br/>
+<br/>
+<input type="button" value="Wylicz" onclick="wyliczanie()"/>
+<input type="button" value="Wyczysc" onclick="czyszczenie1()"/>
+
+
+
+<h1>Szukamy miejsc zerowych dla funkcji liniowej. </h1>
+
+
+<input type="text" value="0" size="3" id="p"/>
+x+
+<input type="text" value="0" size="3" id="q"/>
+=0
+<br/>
+<br/>
+<input type="button" value="Oblicz" onclick="obliczanie()"/>
+<input type="button" value="Wyczysc" onclick="czyszczenie2()"/>
+
+
+
+<h1> Rozwiazujemy rownanie kwadratowe</h1>
+<input type="text" value="0" size="3" id="a"/>
+x^2 +
+<input type="text" value="0" size="3" id="b"/>
+x+
+<input type="text" value="0" size="3" id="c"/>
+=0
+<br/>
+<br/>
+<input type="button" value="Rozwiaz" onclick="rozwiazanie()"/>
+<input type="button" value="Wyczysc" onclick="czyszczenie()"/>
+
+
+
+
+
+<h1> Obliczamy pola figur plaskich</h1>
+<h2> Kolo.</h2>
+<h3>Wpisz dlugosc promienia:</h3>
+
+<input type="text" value="0" size="3" id="r"/><br/><br/>
+
+<input type="button" value="Rozwiaz" onclick="poleKola()"/>
+<input type="button" value="Wyczysc" onclick="czyszczenie3()"/>
+<br/>
+
+</body>
+</html>
